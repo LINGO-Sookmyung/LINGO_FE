@@ -32,6 +32,7 @@
 │       ├── ApiService.kt                             # Retrofit API 인터페이스
 │       ├── AuthInterceptor.kt                        # 인증 토큰 인터셉터
 │       └── RetrofitClient.kt                         # Retrofit 클라이언트 설정
+│
 ├── data/
 │   ├── local/
 │   │   ├── AgreementPrefs.kt                         # 약관 동의 로컬 저장소
@@ -51,6 +52,7 @@
 │           ├── GenerateDocModels.kt                  # 문서 생성 요청/응답 모델
 │           ├── RegisterOriginalDocument.kt           # 원본 문서 등록 모델
 │           └── TranslatedDocumentDto.kt              # 번역 문서 DTO
+│
 └── ui/
     ├── base/
     │   └── BaseActivity.kt                           # 상단 네비게이션 바
