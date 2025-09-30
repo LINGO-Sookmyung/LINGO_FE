@@ -1,7 +1,7 @@
 # LINGO_FE
 
 
-# INTRODUCE
+## INTRODUCE
 공증문서 번역 및 문서 변화 자동화 서비스 "LINGO" 프론트엔드 레포입니다.
 
 
