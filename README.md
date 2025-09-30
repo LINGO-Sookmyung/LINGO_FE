@@ -8,7 +8,7 @@
 ## MEMBER
 | 김민지<br/>([@minjiwkim](https://github.com/minjiwkim)) |
 | :---: |
-| <img width="200" height="200" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
+| <img width="200" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
 
 
 ## INSTALLATION & SETUP
