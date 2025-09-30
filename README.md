@@ -9,10 +9,20 @@
 | :---: |
 | <img width="420" height="420" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
 
+
+## Installation & Setup
+1. Clone the repository
+   ```bash
+   git clone https://github.com/username/project-name.git
+2. Open the project in Android Studio
+3. Build and run on emulator or physical device
+
+
 ## TECH STACKS
 <table>
    <tr><td>Language</td><td>Kotlin</td></tr>
    <tr><td>IDE</td><td>Android Studio Meerkat</td></tr>
+  <tr><td>API calls</td><td>Retrofit</td></tr>
 </table>
 
 
