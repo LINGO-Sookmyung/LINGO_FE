@@ -28,7 +28,7 @@
 </table>
 
 
-### MAIN TECHNLOGIES
+## MAIN TECHNLOGIES
 
 1. 회원가입
 2. 로그인
