@@ -11,18 +11,6 @@
 | <img width="200" height="200" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
 
 
-## MAIN TECHNLOGIES
-- 회원가입 및 로그인
-- 이메일/비밀번호 찾기
-- 내 문서함 관리
-- 번역할 문서 업로드 → 1차 번역 → 번역 결과 확인/수정 → 문서(docx) 생성/다운로드
-
-
-## SUPPORTED DOCUMENTS & LANGUAGES
-- 문서 종류: 가족관계증명서, 재학증명서, 부동산등기부등본(건물)
-- 번역 언어: 영어, 일본어, 중국어, 베트남어
-
-
 ## INSTALLATION & SETUP
 1. 저장소를 클론합니다.
    ```bash
