@@ -11,15 +11,6 @@
 | <img width="200" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
 
 
-## INSTALLATION & SETUP
-1. 저장소를 클론합니다.
-   ```bash
-   git clone https://github.com/LINGO-Sookmyung/LINGO_FE.git
-   ```
-2. Android Studio에서 프로젝트를 엽니다.
-3. 에뮬레이터 또는 실제 기기에서 빌드 후 실행합니다.
-
-
 ## TECH STACKS
 | Category     | Stack                          |
 |--------------|-------------------------------|
