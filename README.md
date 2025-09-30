@@ -97,6 +97,6 @@
             │   └── PhotoReviewActivity.kt            # 촬영 후 사진 검토
             └── document/
                 ├── DocumentGeneratingActivity.kt     # 번역 문서 생성
-                └── DocumentPreviewActivity.kt        # 생성된 문서 미리보기/다운로드
+                └── DocumentPreviewActivity.kt        # 생성된 문서 다운로드
 ```
 
