@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
+import com.example.lingo.core.model.ApiError
 import com.example.lingo.ui.login.LoginActivity
 import com.example.lingo.ui.base.BaseActivity
 import com.google.gson.Gson
@@ -25,8 +26,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.HttpException
 import java.io.IOException
 import java.util.*
-import com.example.lingo.data.remote.ApiService
-import com.example.lingo.data.model.*
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.data.model.auth.SignupCheckEmailRequest
+import com.example.lingo.data.model.auth.SignupRequest
 
 class SignupActivity : BaseActivity() {
 

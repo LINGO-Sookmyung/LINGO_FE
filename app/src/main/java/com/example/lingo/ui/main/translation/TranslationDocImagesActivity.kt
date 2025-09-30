@@ -13,24 +13,23 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lingo.R
-import com.example.lingo.data.remote.RetrofitClient
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.core.network.RetrofitClient
+import com.example.lingo.data.local.TokenManager
 import com.example.lingo.data.repository.UploadRepository
-import com.example.lingo.data.repository.UploadResult
+import com.example.lingo.ui.main.translation.adapter.TranslationPhotoAdapter
 import com.example.lingo.ui.main.translation.camera.CameraCaptureActivity
 import com.example.lingo.ui.main.translation.camera.PhotoCaptureGuideActivity
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.gson.Gson
-import kotlinx.coroutines.launch
 import java.io.File
 import java.io.FileOutputStream
 
@@ -337,12 +336,12 @@ class TranslationDocImagesActivity : AppCompatActivity() {
         return if (allowedOrientation.contains(up)) up else null
     }
 
-    private fun provideApiAuto(ctx: android.content.Context): com.example.lingo.data.remote.ApiService {
-        val access = com.example.lingo.util.TokenManager.get(ctx).getAccessToken()
+    private fun provideApiAuto(ctx: android.content.Context): ApiService {
+        val access = TokenManager.get(ctx).getAccessToken()
         return if (access.isNullOrBlank()) {
-            com.example.lingo.data.remote.RetrofitClient.api          // 비로그인 → 헤더 없음
+            RetrofitClient.api          // 비로그인 → 헤더 없음
         } else {
-            com.example.lingo.data.remote.RetrofitClient.apiWithAuth(ctx) // 로그인 → Authorization 자동 첨부
+            RetrofitClient.apiWithAuth(ctx) // 로그인 → Authorization 자동 첨부
         }
     }
 

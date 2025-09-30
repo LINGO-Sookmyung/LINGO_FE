@@ -14,15 +14,16 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
 import com.example.lingo.ui.base.BaseActivity
-import com.example.lingo.data.model.CheckCurrentPasswordRequest
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.data.model.auth.CheckCurrentPasswordRequest
+import com.example.lingo.core.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import android.util.Log
 import android.util.Base64
+import com.example.lingo.core.di.ServiceLocator
 import org.json.JSONObject
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.TokenManager
 
 class ChangePasswordCurrentActivity : BaseActivity() {
 
@@ -35,7 +36,7 @@ class ChangePasswordCurrentActivity : BaseActivity() {
     private var passwordVisible = false
 
     private val api: ApiService by lazy {
-        com.example.lingo.data.remote.ServiceLocator.provideApi(applicationContext)
+        ServiceLocator.provideApi(applicationContext)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,13 +10,15 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lingo.R
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.core.network.RetrofitClient
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
-import com.example.lingo.util.TokenManager // 로그인 여부 확인용
+import com.example.lingo.data.local.TokenManager // 로그인 여부 확인용
 
 class TranslationResultActivity : AppCompatActivity() {
 
@@ -53,12 +55,12 @@ class TranslationResultActivity : AppCompatActivity() {
         }
     }
 
-    private fun provideApiAuto(ctx: android.content.Context): com.example.lingo.data.remote.ApiService {
+    private fun provideApiAuto(ctx: android.content.Context): ApiService {
         val access = TokenManager.get(ctx).getAccessToken()
         return if (access.isNullOrBlank()) {
-            com.example.lingo.data.remote.RetrofitClient.api
+            RetrofitClient.api
         } else {
-            com.example.lingo.data.remote.RetrofitClient.apiWithAuth(ctx)
+            RetrofitClient.apiWithAuth(ctx)
         }
     }
 

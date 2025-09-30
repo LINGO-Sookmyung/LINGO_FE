@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
+import com.example.lingo.core.di.ServiceLocator
 import com.example.lingo.ui.login.LoginActivity
 import com.example.lingo.ui.base.BaseActivity
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +18,7 @@ import java.io.IOException
 import com.example.lingo.ui.main.mypage.MyPageActivity
 import com.example.lingo.ui.main.translation.TranslationDocActivity
 import com.example.lingo.ui.start.SignupActivity
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.TokenManager
 
 class MainActivity : BaseActivity() {
 
@@ -64,7 +65,7 @@ class MainActivity : BaseActivity() {
     }
 
     // 로그아웃 API (전역 ServiceLocator 사용: AuthInterceptor 포함)
-    private val api by lazy { com.example.lingo.data.remote.ServiceLocator.provideApi(applicationContext) }
+    private val api by lazy { ServiceLocator.provideApi(applicationContext) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

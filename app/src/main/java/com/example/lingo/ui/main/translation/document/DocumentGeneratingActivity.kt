@@ -12,8 +12,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
-import com.example.lingo.data.remote.RetrofitClient
-import com.example.lingo.data.repository.CallResult
+import com.example.lingo.core.network.RetrofitClient
+import com.example.lingo.core.model.CallResult
 import com.example.lingo.data.repository.DocumentRepository
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -29,7 +29,8 @@ import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.widget.Button
 import android.widget.ImageButton
-import com.example.lingo.util.TokenManager // 토큰 유무 판단용
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.data.local.TokenManager // 토큰 유무 판단용
 
 class DocumentGeneratingActivity : AppCompatActivity() {
 
@@ -135,7 +136,7 @@ class DocumentGeneratingActivity : AppCompatActivity() {
         startGeneratingWork()
     }
 
-    private fun provideApiAuto(ctx: android.content.Context): com.example.lingo.data.remote.ApiService {
+    private fun provideApiAuto(ctx: android.content.Context): ApiService {
         val access = TokenManager.get(ctx).getAccessToken()
         return if (access.isNullOrBlank()) {
             RetrofitClient.api          // 비로그인 → 헤더 없음

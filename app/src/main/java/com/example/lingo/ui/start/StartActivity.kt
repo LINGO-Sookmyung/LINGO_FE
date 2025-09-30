@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.lingo.R
 import com.example.lingo.ui.login.LoginActivity
 import com.example.lingo.ui.main.MainActivity
-import com.example.lingo.util.AgreementPrefs
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.AgreementPrefs
+import com.example.lingo.data.local.TokenManager
 
 class StartActivity : AppCompatActivity() {
 

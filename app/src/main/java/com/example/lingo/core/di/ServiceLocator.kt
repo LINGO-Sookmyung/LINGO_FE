@@ -1,6 +1,8 @@
-package com.example.lingo.data.remote
+package com.example.lingo.core.di
 
 import android.content.Context
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.core.network.AuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

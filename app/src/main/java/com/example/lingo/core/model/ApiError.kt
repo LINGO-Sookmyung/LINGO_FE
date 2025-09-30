@@ -1,4 +1,4 @@
-package com.example.lingo.data.model
+package com.example.lingo.core.model
 
 data class ApiError(
     val message: String,

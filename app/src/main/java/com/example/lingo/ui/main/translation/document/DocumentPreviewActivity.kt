@@ -2,23 +2,18 @@ package com.example.lingo.ui.main.translation.document
 
 import android.content.ContentValues
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.pdf.PdfRenderer
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.ParcelFileDescriptor
 import android.provider.MediaStore
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lingo.R
 import com.example.lingo.data.local.MyDocumentsStore
-import com.example.lingo.data.remote.RetrofitClient
+import com.example.lingo.core.network.RetrofitClient
 import com.example.lingo.data.repository.UploadRepository
 import com.example.lingo.data.repository.UploadResult
 import com.example.lingo.ui.main.MainActivity
@@ -33,7 +28,7 @@ import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.TokenManager
 
 class DocumentPreviewActivity : AppCompatActivity() {
 
@@ -171,7 +166,7 @@ class DocumentPreviewActivity : AppCompatActivity() {
                     // 2) 파일명으로 백엔드에 URL 발급 요청 → 응답 path가 절대/상대 모두 가능하니 보정
                     !downloadFilename.isNullOrBlank() -> {
                         when (val r = uploadRepo.getDownloadUrl(downloadFilename!!)) {
-                            is UploadResult.Success -> normalizeToAbsoluteUrl(r.data.path)
+                            is UploadResult.Success -> normalizeToAbsoluteUrl(r.data.data?.path)
                             is UploadResult.Failure -> {
                                 showToastOnMain("다운로드 URL 발급 실패: ${r.message ?: "알 수 없는 오류"}")
                                 return@launch

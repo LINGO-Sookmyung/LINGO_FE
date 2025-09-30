@@ -1,4 +1,4 @@
-package com.example.lingo.data.remote
+package com.example.lingo.core.network
 
 import android.content.Context
 import com.google.gson.Gson

@@ -1,4 +1,4 @@
-package com.example.lingo.util
+package com.example.lingo.data.local
 
 import android.content.Context
 import androidx.core.content.edit

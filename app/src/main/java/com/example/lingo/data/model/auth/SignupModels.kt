@@ -1,4 +1,4 @@
-package com.example.lingo.data.model
+package com.example.lingo.data.model.auth
 
 data class SignupRequest(
     val email: String,

@@ -1,8 +1,9 @@
 package com.example.lingo.data.repository
 
-import com.example.lingo.data.model.GenerateDocRequest
-import com.example.lingo.data.model.GenerateDocResponse
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.core.model.CallResult
+import com.example.lingo.data.model.document.GenerateDocRequest
+import com.example.lingo.data.model.document.GenerateDocResponse
+import com.example.lingo.core.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

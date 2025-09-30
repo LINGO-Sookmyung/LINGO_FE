@@ -7,8 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
-import com.example.lingo.data.model.*
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.core.network.ApiService
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,6 +20,8 @@ import okhttp3.logging.HttpLoggingInterceptor
 import java.io.IOException
 import com.example.lingo.ui.base.BaseActivity
 import androidx.core.widget.doOnTextChanged
+import com.example.lingo.core.model.ApiError
+import com.example.lingo.data.model.auth.FindEmailRequest
 
 class FindEmailActivity : BaseActivity() {
 

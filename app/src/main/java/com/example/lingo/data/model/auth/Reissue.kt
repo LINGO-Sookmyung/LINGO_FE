@@ -1,4 +1,4 @@
-package com.example.lingo.data.model
+package com.example.lingo.data.model.auth
 
 import com.google.gson.annotations.SerializedName
 

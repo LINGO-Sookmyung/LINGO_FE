@@ -1,4 +1,4 @@
-package com.example.lingo.ui.main.translation
+package com.example.lingo.ui.main.translation.adapter
 
 import android.net.Uri
 import android.view.LayoutInflater

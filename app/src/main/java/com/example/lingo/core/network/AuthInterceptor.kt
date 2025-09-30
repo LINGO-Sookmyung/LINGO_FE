@@ -1,10 +1,10 @@
-package com.example.lingo.data.remote
+package com.example.lingo.core.network
 
 import android.content.Context
 import android.util.Log
-import com.example.lingo.data.model.ReissueRequest
-import com.example.lingo.data.model.ReissueResponse
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.model.auth.ReissueRequest
+import com.example.lingo.data.model.auth.ReissueResponse
+import com.example.lingo.data.local.TokenManager
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response

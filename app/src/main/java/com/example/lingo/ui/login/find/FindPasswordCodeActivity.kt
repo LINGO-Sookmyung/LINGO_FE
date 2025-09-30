@@ -9,12 +9,12 @@ import com.example.lingo.R
 import com.example.lingo.ui.base.BaseActivity
 import kotlinx.coroutines.launch
 import android.content.Intent
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.core.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.io.IOException
-import com.example.lingo.data.model.*
+import com.example.lingo.data.model.auth.ResetPasswordVerifyRequest
 
 class FindPasswordCodeActivity : BaseActivity() {
 
@@ -31,7 +31,7 @@ class FindPasswordCodeActivity : BaseActivity() {
             .client(client)
             .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())
             .build()
-            .create(com.example.lingo.data.remote.ApiService::class.java)
+            .create(ApiService::class.java)
     }
 
     companion object {

@@ -1,10 +1,10 @@
 package com.example.lingo.data.repository
 
 import com.google.gson.Gson
-import com.example.lingo.data.model.ApiError
-import com.example.lingo.data.model.SignupRequest
-import com.example.lingo.data.model.SignupResponse
-import com.example.lingo.data.remote.RetrofitClient
+import com.example.lingo.core.model.ApiError
+import com.example.lingo.data.model.auth.SignupRequest
+import com.example.lingo.data.model.auth.SignupResponse
+import com.example.lingo.core.network.RetrofitClient
 
 sealed class Result<out T> {
     data class Success<T>(val data: T): Result<T>()

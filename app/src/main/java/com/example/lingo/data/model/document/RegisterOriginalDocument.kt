@@ -1,4 +1,4 @@
-package com.example.lingo.data.model
+package com.example.lingo.data.model.document
 
 data class RegisterOriginalReq(
     val requestDTO: RequestDTO,

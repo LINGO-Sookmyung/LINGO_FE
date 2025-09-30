@@ -15,7 +15,8 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lingo.R
-import com.example.lingo.data.remote.RetrofitClient
+import com.example.lingo.core.network.ApiService
+import com.example.lingo.core.network.RetrofitClient
 import com.example.lingo.data.repository.UploadRepository
 import com.example.lingo.data.repository.UploadResult
 import com.google.android.material.appbar.MaterialToolbar
@@ -23,7 +24,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonElement
 import kotlinx.coroutines.*
 import retrofit2.Response
-import com.example.lingo.util.TokenManager // 자동 클라이언트 선택에 사용
+import com.example.lingo.data.local.TokenManager // 자동 클라이언트 선택에 사용
 
 class TranslationInProgressActivity : AppCompatActivity() {
 
@@ -183,7 +184,7 @@ class TranslationInProgressActivity : AppCompatActivity() {
     }
 
     // ------------------- 로그인 여부에 따라 API 자동 선택 -------------------
-    private fun provideApiAuto(ctx: android.content.Context): com.example.lingo.data.remote.ApiService {
+    private fun provideApiAuto(ctx: android.content.Context): ApiService {
         val access = TokenManager.get(ctx).getAccessToken()
         return if (access.isNullOrBlank()) {
             RetrofitClient.api           // 비로그인 → 헤더 없음

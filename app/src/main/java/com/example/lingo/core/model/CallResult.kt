@@ -1,4 +1,4 @@
-package com.example.lingo.data.repository
+package com.example.lingo.core.model
 
 sealed class CallResult<out T> {
     data class Success<T>(val data: T) : CallResult<T>()

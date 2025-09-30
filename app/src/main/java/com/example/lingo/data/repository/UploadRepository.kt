@@ -4,10 +4,10 @@ import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
 import android.webkit.MimeTypeMap
-import com.example.lingo.data.model.PresignedDownloadResponse
-import com.example.lingo.data.model.PresignedItem
-import com.example.lingo.data.model.PresignedUploadResponse
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.data.model.storage.PresignedDownloadResponse
+import com.example.lingo.data.model.storage.PresignedItem
+import com.example.lingo.data.model.storage.PresignedUploadResponse
+import com.example.lingo.core.network.ApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -41,15 +41,19 @@ class UploadRepository(
         withContext(Dispatchers.IO) {
             try {
                 val res = api.createUploadUrls(fileNames)
-                if (res.isSuccessful) {
-                    val body: PresignedUploadResponse? = res.body()
-                    if (body != null && body.success) {
-                        UploadResult.Success(body.data)
-                    } else {
-                        UploadResult.Failure(res.code(), "Invalid response or success=false")
-                    }
+                if (!res.isSuccessful) {
+                    return@withContext UploadResult.Failure(
+                        res.code(), "Request failed", res.errorBody()?.string()
+                    )
+                }
+
+                val body = res.body()
+                val items = body?.data
+
+                return@withContext if (body?.success == true && !items.isNullOrEmpty()) {
+                    UploadResult.Success(items)              // items는 여기서 non-null 보장
                 } else {
-                    UploadResult.Failure(res.code(), "Request failed", res.errorBody()?.string())
+                    UploadResult.Failure(res.code(), "Invalid response or success=false or empty data")
                 }
             } catch (e: IOException) {
                 UploadResult.Failure(null, "Network error: ${e.message}")
@@ -64,12 +68,16 @@ class UploadRepository(
         withContext(Dispatchers.IO) {
             try {
                 val res = api.createDownloadUrl(filename)
-                if (res.isSuccessful) {
-                    val body = res.body()
-                    if (body != null) UploadResult.Success(body)
-                    else UploadResult.Failure(res.code(), "Empty body")
+                if (!res.isSuccessful) {
+                    return@withContext UploadResult.Failure(
+                        res.code(), "Request failed", res.errorBody()?.string()
+                    )
+                }
+                val body = res.body()
+                if (body != null) {
+                    UploadResult.Success(body)
                 } else {
-                    UploadResult.Failure(res.code(), "Request failed", res.errorBody()?.string())
+                    UploadResult.Failure(res.code(), "Empty body")
                 }
             } catch (e: IOException) {
                 UploadResult.Failure(null, "Network error: ${e.message}")

@@ -11,19 +11,20 @@ import android.widget.*
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
+import com.example.lingo.core.di.ServiceLocator
 
-import com.example.lingo.data.model.ApiError
-import com.example.lingo.data.model.LoginRequest
-import com.example.lingo.data.model.LoginResponse as LResponse
-import com.example.lingo.data.model.JwtToken as JToken
+import com.example.lingo.core.model.ApiError
+import com.example.lingo.data.model.auth.LoginRequest
+import com.example.lingo.data.model.auth.LoginResponse as LResponse
+import com.example.lingo.data.model.auth.JwtToken as JToken
 
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.core.network.ApiService
 import com.example.lingo.ui.base.BaseActivity
 import com.example.lingo.ui.login.find.FindEmailActivity
 import com.example.lingo.ui.login.find.FindPasswordActivity
 import com.example.lingo.ui.main.MainActivity
 import com.example.lingo.ui.start.SignupActivity
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.TokenManager
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,7 +48,7 @@ class LoginActivity : BaseActivity() {
 
     // 전역 ServiceLocator 사용 (AuthInterceptor 포함)
     private val api: ApiService by lazy {
-        com.example.lingo.data.remote.ServiceLocator.provideApi(applicationContext)
+        ServiceLocator.provideApi(applicationContext)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

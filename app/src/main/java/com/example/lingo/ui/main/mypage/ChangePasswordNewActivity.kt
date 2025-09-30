@@ -14,7 +14,7 @@ import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.lifecycleScope
 import com.example.lingo.R
 import com.example.lingo.ui.base.BaseActivity
-import com.example.lingo.util.TokenManager
+import com.example.lingo.data.local.TokenManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -27,11 +27,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
-import com.example.lingo.data.remote.ApiService
+import com.example.lingo.core.network.ApiService
 
 // data.model 패키지의 DTO를 사용
-import com.example.lingo.data.model.ChangePasswordRequest
-import com.example.lingo.data.model.ApiMessage
+import com.example.lingo.data.model.auth.ChangePasswordRequest
+import com.example.lingo.data.model.auth.ApiMessage
 
 class ChangePasswordNewActivity : BaseActivity() {
 
