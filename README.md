@@ -20,24 +20,24 @@
 3. 에뮬레이터 또는 실제 기기에서 빌드 후 실행합니다.
 
 
+## MAIN TECHNLOGIES
+- 회원가입 및 로그인
+- 이메일/비밀번호 찾기
+- 내 문서함 관리
+- 번역할 문서 업로드 → 1차 번역 → 번역 결과 확인/수정 → 문서(docx) 생성/다운로드
+
+
+## SUPPORTED DOCUMENTS & LANGUAGES
+- 문서 종류: 가족관계증명서, 재학증명서, 부동산등기부등본(건물)
+- 번역 언어: 영어, 일본어, 중국어, 베트남어
+
+
 ## TECH STACKS
 <table>
    <tr><td>Language</td><td>Kotlin</td></tr>
    <tr><td>IDE</td><td>Android Studio Meerkat</td></tr>
   <tr><td>Networking</td><td>Retrofit</td></tr>
 </table>
-
-
-## MAIN TECHNLOGIES
-
-1. 회원가입
-2. 로그인
-3. 비밀번호찾기
-4. 내문서함
-5. 번역 대상 원본 문서 업로드
-6. 1차 번역 진행
-7. 문서 변환
-8. 문서 다운로드
 
 
 ## PROJECT STRUCTURE
