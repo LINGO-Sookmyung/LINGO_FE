@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootTranslationDocImages"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    android:fontFamily="@font/pretendard">
+
+    <!-- 상단 공통 앱바 -->
+    <include
+        android:id="@+id/topAppBar"
+        layout="@layout/view_top_appbar" />
+
+    <!-- 본문 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 미리보기 카드 (주석 처리)
+        <LinearLayout
+            android:id="@+id/previewCard"
+            android:layout_width="220dp"
+            android:layout_height="280dp"
+            android:background="@drawable/bg_preview_card"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/ivPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:id="@+id/tvPreviewPlaceholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미리보기"
+                android:textColor="#808080"
+                android:textSize="14sp" />
+        </LinearLayout>
+        -->
+
+        <!-- 완료 문구 -->
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="번역이 완료되었습니다!"
+            android:textColor="#1A1A1A"
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center" />
+
+        <!-- 다운로드 아이콘 버튼 -->
+        <ImageButton
+            android:id="@+id/btnDownload"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_download"
+            android:contentDescription="@string/app_name" />
+
+    </LinearLayout>
+
+    <!-- 하단 고정 바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/outlined_button_blue"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+            <TextView
+                android:id="@+id/btnNextText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="메인 화면으로"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btnNextArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_arrow_white" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

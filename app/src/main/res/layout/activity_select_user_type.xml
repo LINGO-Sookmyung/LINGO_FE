@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 상단 앱바 -->
+    <include
+        android:id="@+id/topAppBar"
+        layout="@layout/view_top_appbar" />
+
+    <!-- 메인 내용 -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 로고 이미지 -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_logo"
+            android:contentDescription="@string/app_name"
+            android:layout_marginBottom="20dp" />
+
+        <!-- 일반 회원 버튼 -->
+        <Button
+            android:id="@+id/btnGeneralMember"
+            android:text="일반 회원"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/outlined_button_blue"
+            android:fontFamily="@font/pretendard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <!-- 기업 회원 버튼 -->
+        <Button
+            android:id="@+id/btnBusinessMember"
+            android:text="기업 회원"
+            android:textColor="#1D1B20"
+            android:background="@drawable/outlined_button_white"
+            android:fontFamily="@font/pretendard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</LinearLayout>

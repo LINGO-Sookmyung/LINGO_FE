@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/optCamera"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="사진 촬영"
+        android:textSize="16sp"
+        android:textColor="#1D1B20"
+        android:background="@drawable/selector_modal_item" />
+
+    <TextView
+        android:id="@+id/optGallery"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="갤러리에서 선택"
+        android:textSize="16sp"
+        android:textColor="#1D1B20"
+        android:background="@drawable/selector_modal_item" />
+
+    <TextView
+        android:id="@+id/optDocument"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="문서함에서 선택"
+        android:textSize="16sp"
+        android:textColor="#1D1B20"
+        android:background="@drawable/selector_modal_item" />
+</LinearLayout>

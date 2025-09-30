@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <!-- 로고 이미지 -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_logo"
+        android:contentDescription="@string/app_name"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 설명 텍스트 -->
+    <TextView
+        android:text="로그인을 하시면 보다 편리하게\n서비스를 이용할 수 있어요!"
+        android:textSize="14sp"
+        android:textColor="#797979"
+        android:fontFamily="@font/pretendard"
+        android:gravity="center"
+        android:layout_marginBottom="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- 회원가입 버튼 -->
+    <Button
+        android:id="@+id/btnStart"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/outlined_button_blue"
+        android:fontFamily="@font/pretendard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 이미 회원이에요! 버튼 -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="이미 회원이에요!"
+        android:textColor="#1D1B20"
+        android:fontFamily="@font/pretendard"
+        android:background="@drawable/outlined_button_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 회원가입 없이 이용할래요 버튼 -->
+    <Button
+        android:id="@+id/btnGuest"
+        android:text="회원가입 없이 이용할래요"
+        android:textColor="#1D1B20"
+        android:fontFamily="@font/pretendard"
+        android:background="@drawable/outlined_button_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

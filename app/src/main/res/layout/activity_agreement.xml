@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 헤더 영역 (로고 우측 상단) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 타이틀 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard"
+            android:text="LINGO"
+            android:textColor="#1D1B20"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/pretendard"
+            android:text="이용 약관 동의"
+            android:textColor="#1D1B20"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/pretendard"
+            android:text="LINGO를 시작 및 가입을 위해\n정보 제공에 동의를 해주세요!"
+            android:textColor="#797979"
+            android:textSize="14sp" />
+
+        <!-- 전체 약관동의 배너 -->
+        <LinearLayout
+            android:id="@+id/layoutAllAgree"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/outlined_button_blue"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <CheckBox
+                android:id="@+id/checkAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="#FFFFFF"
+                android:fontFamily="@font/pretendard"
+                android:text="전체 약관 동의"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/pretendard"
+            android:text="(필수) 이용 약관 동의"
+            android:textColor="#1D1B20" />
+
+        <CheckBox
+            android:id="@+id/checkbox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:fontFamily="@font/pretendard"
+            android:text="(필수) 개인정보 수집 동의"
+            android:textColor="#1D1B20" />
+
+        <CheckBox
+            android:id="@+id/checkbox3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:fontFamily="@font/pretendard"
+            android:text="(선택) 이벤트 및 마케팅 이용 약관 동의"
+            android:textColor="#1D1B20" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/outlined_button_gray"
+            android:enabled="false"
+            android:fontFamily="@font/pretendard"
+            android:text="다음"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>
