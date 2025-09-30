@@ -1,10 +1,9 @@
 # LINGO_FE
 
-
 # INTRODUCE
-공증문서 번역 및 문서 변화 자동화 서비스 " LINGO" 프론트엔드 레포입니다.
+공증문서 번역 및 문서 변화 자동화 서비스 "LINGO" 프론트엔드 레포입니다.
   
-## Member 
+## MEMBER
 | 김민지<br/>([@minjiwkim](https://github.com/minjiwkim)) |
 | :---: |
 | <img width="200" height="200" alt="Image" src="https://github.com/user-attachments/assets/4ddbab6f-b7aa-4eeb-a1a7-f3ca8e9ee4e4" /> |
@@ -26,7 +25,7 @@
 </table>
 
 
-## Main Technologies
+## MAIN TECHNLOGIES
 
 1. [회원가입](#1-회원가입)  
 2. [로그인](#2-로그인)  
@@ -35,7 +34,9 @@
 5. [번역 대상 원본 문서 업로드](#5-번역-대상-원본-문서-업로드)  
 6. [1차 번역 진행](#6-1차-번역-진행)  
 7. [문서 변환](#7-문서-변환)  
-8. [문서 다운로드](#8-문서-다운로드)  
+8. [문서 다운로드](#8-문서-다운로드)
+
+<hr>
 
 ### 1. 회원가입
 이메일과 비밀번호를 입력해 새로운 계정을 만들 수 있습니다.
